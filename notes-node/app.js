@@ -15,10 +15,28 @@ command = args._[0];
 
 console.log(args);
 
-if (command === 'add'){
-    notes.addNote(args.title, args.body);
-} else if (command === 'list'){
+var printResults = (note, action) => {
+    console.log(`Note ${action}`);
+    console.log('--------------');
+    console.log(`Title: ${note.title}`);
+    console.log(`Body: ${note.body}`);
+}
+
+if (command === 'add') {
+    var note = notes.addNote(args.title, args.body);
+    if (note) {
+      printResults(note, 'created')
+    };
+} else if (command === 'list') {
     notes.listNotes();
-} else if (command == 'remove'){
-    notes.removeNote(args.title)
+} else if (command == 'remove') {
+    var result = notes.removeNote(args.title);
+    var message = result ? 'Note removed' : 'Note not found';
+    console.log(message);
+} else if (command == 'read') {
+    var note = notes.readNote(args.title);
+    if (note) {
+      printResults(note, 'fetched')
+    };
+
 }
