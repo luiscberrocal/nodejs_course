@@ -1,3 +1,3 @@
 FROM node:8.9.1
 
-CMD [ "bash" ]
+RUN npm install nodemon -g
