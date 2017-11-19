@@ -16,5 +16,9 @@ command = args._[0];
 console.log(args);
 
 if (command === 'add'){
-    notes.addNote(args.title, args.body)
+    notes.addNote(args.title, args.body);
+} else if (command === 'list'){
+    notes.listNotes();
+} else if (command == 'remove'){
+    notes.removeNote(args.title)
 }
