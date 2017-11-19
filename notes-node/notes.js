@@ -37,7 +37,7 @@ var addNote = (title, body) => {
 };
 
 var listNotes = () => {
-    console.log('Listing all nodes!!')
+   return fetchNotes();
 }
 
 var readNote = (title) =>{

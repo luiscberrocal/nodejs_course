@@ -26,9 +26,13 @@ if (command === 'add') {
     var note = notes.addNote(args.title, args.body);
     if (note) {
       printResults(note, 'created')
-    };
+    } else {
+        console.log('Note not found')
+    }
 } else if (command === 'list') {
-    notes.listNotes();
+    var allNotes = notes.listNotes();
+    console.log(`Printing ${allNotes.length} notes`)
+    allNotes.forEach((note) => printResults(note, 'listed'))
 } else if (command == 'remove') {
     var result = notes.removeNote(args.title);
     var message = result ? 'Note removed' : 'Note not found';
