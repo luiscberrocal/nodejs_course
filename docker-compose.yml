@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  nodejs: 
+    build:
+      context: .
+      dockerfile: ./compose/node/Dockerfile
+    volumes:
+      - .:/app
+    tty: true
