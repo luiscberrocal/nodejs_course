@@ -52,9 +52,18 @@ var removeNote = (title) =>{
     saveNotes(notDeletedNotes);
     return notes.length !== notDeletedNotes.length;
 }
+
+var printResults = (note, action) => {
+    console.log(`Note ${action}`);
+    console.log('--------------');
+    console.log(`Title: ${note.title}`);
+    console.log(`Body: ${note.body}`);
+}
+
 module.exports = {
     addNote,
     listNotes,
     removeNote,
-    readNote
+    readNote,
+    printResults
 };
