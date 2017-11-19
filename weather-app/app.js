@@ -22,10 +22,13 @@ geocode.geocodeAddress(argv.address, (errorMessage, results) => {
     if (errorMessage) {
         console.log(errorMessage);
     } else {
-        console.log(JSON.stringify(results, undefined, 2))
+        console.log(JSON.stringify(results, undefined, 2));
+        console.log('--- Sent Call to Weather Service ---');
         weather.getWeather(results, (errorMessage, weather_results) => {
             console.log(JSON.stringify(weather_results, undefined, 2));
         })
     }
 });
+
+console.log('--- Sent Call to GeoCode Service ---');
 
