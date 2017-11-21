@@ -13,7 +13,7 @@ var getWeather = (address, callback) => {
             callback(body.error);
         } else {
             callback(undefined, {
-                teemperature: body.currently.temperature,
+                temperature: body.currently.temperature,
             });
             //console.log(JSON.stringify(body.results[0], undefined, 2));
         }
